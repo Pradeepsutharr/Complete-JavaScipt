@@ -58,15 +58,15 @@
 */
 
 // function logginMsg(username) {
-//   if (!undefined) {
+//   if (username != undefined) {
 //     return `${username} just logged in`;
 //   } else {
 //     return "plz enter username";
 //   }
 // }
-// // console.log(logginMsg());  //output=> user just logged in
+// console.log(logginMsg()); //output=> undefined just logged in
 // // console.log(logginMsg("Pradeep")); //output=> Pradeep just logged in
-// console.log(logginMsg("pradeep"));
+// // console.log(logginMsg("pradeep"));
 
 /*
 |

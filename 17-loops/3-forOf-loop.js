@@ -62,3 +62,24 @@
 //  key: name,value: pradeep
 // key: id,value: 777
 // key: age,value: 22*/
+
+/*
+|
+|
+|
+*/
+
+//for in loop
+
+const myObj = {
+  name: "pradeep",
+  id: 777,
+  address: "ahmedabad",
+  age: 22,
+};
+
+for (const [key, value] of myObj) {
+  console.log(`key: ${key} value:${value}`); //output=> myObj is not iterable
+}
+
+//for of loop doesnt work on abjects
