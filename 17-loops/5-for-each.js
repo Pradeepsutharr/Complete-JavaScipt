@@ -4,18 +4,50 @@ const coding = ["js", "python", "php", "c++"];
 //   console.log(val);
 // });
 
+/*
+|
+|
+|
+|
+|
+*/
+
 // coding.forEach((val) => {
 //   console.log(val);
 // });
+
+/*
+|
+|
+|
+|
+|
+*/
 
 // function printData(value) {
 //   console.log(value);
 // }
 // coding.forEach(printData);
 
+/*
+|
+|
+|
+|
+|
+*/
+
 // coding.forEach((val, index, array) => {
 //   console.log(val, index, array);
 // });
+
+/*
+|
+|
+|
+|
+|
+*/
 
 const langauges = [
   {
