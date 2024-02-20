@@ -7,11 +7,11 @@
 //     console.log(this); //function should be called with the object context with "user"
 //   },
 // };
-// // user.msg();  //output=> { username: 'himanshu', price: 150, msg: [Function: msg] }
+// user.msg(); //output=> { username: 'himanshu', price: 150, msg: [Function: msg] }
 
-// // user.username = "harshdeep"; // here we have changed the value of username
+// user.username = "harshdeep"; // here we have changed the value of username
 
-// // user.msg(); //output=> { username: 'harshdeep', price: 150, msg: [Function: msg] }
+// user.msg(); //output=> { username: 'harshdeep', price: 150, msg: [Function: msg] }
 
 // console.log(this); //output will be empty  but in the browser it will gives you window object coz window is the global object of browseer
 
@@ -83,6 +83,6 @@
 |
 */
 
-// return array with arrow function
-const myArray = (x, y) => [100, 300];
-console.log(myArray());
+// // return array with arrow function
+// const myArray = (x, y) => [100, 300];
+// console.log(myArray());
