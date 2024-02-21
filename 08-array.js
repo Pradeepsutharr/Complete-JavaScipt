@@ -146,3 +146,6 @@ let score3 = 300;
 const merge_variables_into_arr = Array.of(score1, score2, score3);
 console.log(merge_variables_into_arr);
 //output=> [100,200,300]
+
+const random = ["tree", 795, [0, 1, 2]];
+console.log(random[2][2]);

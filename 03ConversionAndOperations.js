@@ -1,4 +1,4 @@
-///////////////--coversion---///////////
+///////////////--coversion---///////////////
 
 // let score = 33;
 // // let score = "33abc";
@@ -34,7 +34,7 @@
 // let score = undefined;
 // console.log(score); //undefined
 
-// console.log(typeof score); //number
+// console.log(typeof score); //undefined
 
 // const valueInNumber = Number(score);
 // console.log(valueInNumber); //NaN

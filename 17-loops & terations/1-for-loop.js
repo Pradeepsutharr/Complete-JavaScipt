@@ -64,7 +64,7 @@
 // //skipping specific index in loop
 // for (let i = 0; i < 10; i++) {
 //   if (i == 6) {
-//     console.log("detacted 6, and it will be skipped");
+//     console.log("detected 6, and it will be skipped");
 //     continue; // it will skipped the index which is matched to the condition
 //   }
 //   console.log(i);

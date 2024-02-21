@@ -3,18 +3,18 @@
 
 // //object literals
 
-// // const mySymbole = Symbole("key1");
+const mySymbole = Symbol("key1");
 
-// const user = {
-//   name: "Pradeep",
-//   "full Name": "Pradeep Suthar",
-//   age: 22,
-//   email: "pradeep@pysquad.com",
-//   isloggedIn: false,
-//   loginDays: ["monday", "friday"],
-//     // mySymbole: "myKey1", // string
-//   // [mySymbole]: "myKey1",
-// };
+const user = {
+  name: "Pradeep",
+  "full Name": "Pradeep Suthar",
+  age: 22,
+  email: "pradeep@pysquad.com",
+  isloggedIn: false,
+  loginDays: ["monday", "friday"],
+  // mySymbole: "myKey1", // string
+  [mySymbole]: "myKey1",
+};
 
 // console.log(user.name);
 // //output=> Pradeep
@@ -59,7 +59,7 @@
 // user.greetTwo = function () {
 //   console.log(`Hello user,${this.name}`); // this.name = current context => user.name
 //   console.log(`hello user,${this["full Name"]}`);
-//   console.log(`heelo user,${user.email}`);
+//   console.log(`hello user,${user.email}`);
 // };
 
 // console.log(user.greet());
@@ -75,7 +75,7 @@
 |
 */
 
-// //creating array in second way
+// //creating object in second way
 
 // const AppUser = {};
 // AppUser.name = "Pradeep";
@@ -94,7 +94,7 @@
 // };
 
 // console.log(NewUser.fullname);
-// // ountput=> { userfullname: { fisrtname: 'Pradeep', lastname: 'suthar' } }
+// // output=> { userfullname: { fisrtname: 'Pradeep', lastname: 'suthar' } }
 
 // console.log(NewUser.fullname.userfullname);
 // // ountput=> { fisrtname: 'Pradeep', lastname: 'suthar' }
@@ -163,7 +163,7 @@ const course = {
 };
 
 const { courseName } = course; // we add one or more keys  from the object into variables
-console.log(courseName); //output=> JavaScript
+// console.log(courseName); //output=> JavaScript
 
 const { courseInstructor: instructor } = course; //we can change the name (key) in this way
-console.log(instructor); //output=> Pradeep
+// console.log(instructor); //output=> Pradeep

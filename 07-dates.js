@@ -1,5 +1,6 @@
-// let myDate = new Date();
+let myDate = new Date();
 // console.log(myDate);
+// //output= 2024-02-21T05:18:07.600Z
 
 // console.log(myDate.toDateString());
 // //output=> Wed Feb 14 2024

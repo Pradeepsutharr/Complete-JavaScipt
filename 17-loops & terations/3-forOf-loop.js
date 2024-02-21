@@ -69,8 +69,6 @@
 |
 */
 
-//for in loop
-
 const myObj = {
   name: "pradeep",
   id: 777,
