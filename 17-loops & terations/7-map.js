@@ -13,11 +13,11 @@ console.log(newNums);
 |
 */
 
-//chaining
-const numsTwo = nums
-  .map((number) => number * 10) //multiplying each number with 10
-  .map((number) => number + 1) // add 1 to the previous result
-  .filter((number) => number >= 40); // filtering numbers greater than 40 from previous result
+// //chaining
+// const numsTwo = nums
+//   .map((number) => number * 10) //multiplying each number with 10
+//   .map((number) => number + 1) // add 1 to the previous result
+//   .filter((number) => number >= 40); // filtering numbers greater than 40 from previous result
 
-console.log(numsTwo);
-//output => [ 41, 51, 61, 71, 81, 91 ]
+// console.log(numsTwo);
+// //output => [ 41, 51, 61, 71, 81, 91 ]
