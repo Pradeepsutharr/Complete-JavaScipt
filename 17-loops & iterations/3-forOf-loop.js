@@ -1,7 +1,7 @@
-// const arr = [1, 2, 3, 4, 5, 6];
-// for (const num of arr) {
-//   console.log(num);
-// }
+const arr = [1, 2, 3, 4, 5, 6];
+for (const num of arr) {
+  console.log(num);
+}
 
 /*
 |
@@ -53,7 +53,7 @@
 // map.set("name", "pradeep");
 // map.set("id", "777");
 // map.set("age", "22");
-// map.set("name", "pradeep"); //(duplicates not allowed in this loop) this  will not add a new pair to the map, it will update the existing one
+// map.set("name", "pradeep"); //(duplicates not allowed in Map) this  will not add a new pair to the map, it will update the existing one
 
 // for (const [key, value] of map) {
 //   console.log(`key: ${key},value: ${value}`);
@@ -69,15 +69,15 @@
 |
 */
 
-const myObj = {
-  name: "pradeep",
-  id: 777,
-  address: "ahmedabad",
-  age: 22,
-};
+// const myObj = {
+//   name: "pradeep",
+//   id: 777,
+//   address: "ahmedabad",
+//   age: 22,
+// };
 
-for (const [key, value] of myObj) {
-  console.log(`key: ${key} value:${value}`); //output=> myObj is not iterable
-}
+// for (const [key, value] of myObj) {
+//   console.log(`key: ${key} value:${value}`); //output=> myObj is not iterable
+// }
 
 //for of loop doesnt work on abjects

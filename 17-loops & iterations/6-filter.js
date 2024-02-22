@@ -1,7 +1,7 @@
-const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const newNums = nums.filter((num) => num > 5);
-console.log(newNums);
-//output=> [ 6, 7, 8, 9 ]
+// const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const newNums = nums.filter((num) => num > 5);
+// console.log(newNums);
+// //output=> [ 6, 7, 8, 9 ]
 
 /*
 |
@@ -10,12 +10,12 @@ console.log(newNums);
 |
 */
 
-const newNumsTwo = nums.filter((num) => {
-  return num > 4;
-});
-console.log(newNumsTwo);
-//output=> [ 5, 6, 7, 8, 9 ]
-// if we added curly brackets than we must have to write return
+// const newNumsTwo = nums.filter((num) => {
+//   return num > 4;
+// });
+// console.log(newNumsTwo);
+// //output=> [ 5, 6, 7, 8, 9 ]
+// // if we added curly brackets than we must have to write return
 
 /*
 |
@@ -36,12 +36,10 @@ let books = [
 ];
 
 const NewBooks = books.filter((book) => book.Genre === "History");
-// console.log(NewBooks);
+console.log(NewBooks);
 /* output=>
-[
-  { title: 'Book-2', Genre: 'History', Publish: 2000, Edition: 2012 },
-  { title: 'Book-6', Genre: 'History', Publish: 2004, Edition: 2013 }
-]
+[ { title: 'Book-2', Genre: 'History', Publish: 2000, Edition: 2012 },
+  { title: 'Book-6', Genre: 'History', Publish: 2004, Edition: 2013 } ]
 */
 
 const oldBooks = books.filter((book) => book.Publish <= 2010);

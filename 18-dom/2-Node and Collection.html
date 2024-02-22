@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="week">
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">thursday</div>
+        <div class="day">friday</div>
+    </div>
+
+</body>
+
+<script>
+
+    // const week = document.getElementsByClassName("week")
+    // console.log(week); // output=>  HTMLCollection(1)
+
+
+    const week = document.querySelector('.week')
+    console.log(week); // output=> div.week (complete collection)
+
+    console.log(week.children); //output=> HTMLCollection(5) [div.day, div.day, div.day, div.day, div.day]
+
+    //applying css on each children using forLoop
+    for (let i = 0; i < week.children.length; i++) {
+        console.log(week.children[i].innerHTML);
+        /*output=> 
+        monday
+        tuesday
+        wednesday
+        thursday
+        friday
+        */
+    }
+    // week.children[0].style.color = 'red' // changing color of 0 index
+    // console.log(week.firstElementChild);  //output=> <div class="day">monday</div>
+    // console.log(week.lastElementChild);
+
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne);  // output=> div.day(monday)
+    // console.log(dayOne.parentElement);  // output=> div.week
+    // console.log(dayOne.nextElementSibling); // output=> div.day(tuesday)
+
+    // document.writeln("Pradeep")
+</script>
+
+
+</html>

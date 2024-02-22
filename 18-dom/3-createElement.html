@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Element Create</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    const div = document.createElement('div')
+    // div.setAttribute('class', 'dynamicDiv')   //added class
+    // div.className = 'dynamicDiv'               //added class
+    // div.setAttribute('id', 'DyDiv')             // added id
+    console.log(div);
+
+    let addText = document.createTextNode('Hello JavaScript')
+    div.appendChild(addText);  //adding text in div
+    div.style.color = 'red'
+    div.style.fontSize = '20px'
+
+    document.body.appendChild(div)  // printing div on document (screen)
+
+</script>
+
+</html>

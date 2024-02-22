@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="title" class="heading"><span style="display: none;">welcome to </span>PySquad Informatics </h1>
+
+
+    <ul>
+        <li class="list">one</li>
+        <li class="list">two</li>
+        <li class="list">three</li>
+        <li class="list">four</li>
+    </ul>
+
+
+    <script>
+        // js selectors
+        /*
+        1.document.getElementById ()
+        2.document.getElementByName ()
+        3.document.getElementByClassName ()
+        4.document.getElementByTagName ()
+        5.document.getElementByquerySelector ()
+        6.document.getElementByquerySelectorAll ()
+        */
+
+
+        //set class=heading
+        document.getElementById('title').setAttribute('class', 'heading')
+
+        //storing element in a variable
+        // let title = document.getElementById('title')
+        let title = document.querySelector('.heading')
+        title.style.color = "grey"; // added css  property color with red value to the element having id as title 
+
+        // console.log(title.textContent); //welcome to PySquad Informatics
+
+        // console.log(title.innerHTML);  //<span style="display: none;">welcome to </span>PySquad Informatics
+
+        // console.log(title.innerText);   //PySquad Informatics
+
+
+
+        let list = document.querySelectorAll("li")
+
+        // output=> HTMLCollection(4)[li, li, li, li]
+
+        console.log(list); // output=> NodeList(4) [li, li, li, li]  (this is not array)
+
+        // list.style.color = "blue"; // this will give error because we can't apply style on node list directly
+
+        // // applying css on particular li
+        // list[1].style.color = "blue" //if uh want to add css thn uh have to define the index of element
+
+        // //applying css on all li's stored in list using foreach loop
+        // list.forEach(li => {
+        //     li.style.color = 'red'
+        // });
+
+
+
+
+
+        // // let listTwo = document.getElementsByClassName("list")
+        // let listTwo = document.getElementsByTagName('li')
+
+        // console.log(listTwo); // HTMLCollection(4) [li.list, li.list, li.list, li.list]
+
+
+
+        
+
+        // // // if uh want to add css on listTwo than first uh have to convert it into array to apply forEach loop
+
+        // const listIntoArray = Array.from(listTwo)
+        // console.log(listIntoArray);  // output=> (4) [li.list, li.list, li.list, li.list]
+
+        // listIntoArray.forEach(li => {
+        //     li.style.fontSize = "20px";
+        // })
+
+    </script>
+</body>
+
+</html>

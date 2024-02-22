@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ol id="langauge">
+        <li>JavaScript</li>
+    </ol>
+    <input type="text" class="NewLang">
+    <input type="button" id="btn" value="add">
+    <input type="button" value="remove" id="removeBtn">
+
+</body>
+
+
+<script>
+
+    const ol = document.querySelector('#langauge')
+    const btn = document.getElementById('btn')
+    const remove = document.getElementById('removeBtn')
+    const replaceBtn = document.querySelector('.replace')
+
+    // btn.addEventListener('click',
+    //     (langName) => {
+    //         const NewLang = document.querySelector('.NewLang').value
+    //         const CreateLi = document.createElement('li');
+    //         CreateLi.innerHTML = (NewLang)
+    //         ol.appendChild(CreateLi)
+    //     })
+
+
+
+    // use this one instead of previous one (correct way according to DSA)
+    btn.addEventListener('click',
+        (langName) => {
+            const NewLang = document.querySelector('.NewLang').value
+            const CreateLi = document.createElement('li');
+            CreateLi.appendChild(document.createTextNode(NewLang))
+            ol.appendChild(CreateLi)
+        })
+
+    remove.addEventListener('click', (removeLang) => {
+        if (ol.childElementCount > 1) {
+            ol.removeChild(ol.lastElementChild)
+
+        }
+    })
+
+
+
+
+    //Edit Element
+    //1
+    // const secondLi = document.querySelector('li:nth-child(1)')
+    // const newLi = document.createElement('li')
+    // newLi.textContent = "mojo"
+    // secondLi.replaceWith(newLi)
+
+
+    //2
+    // const firstLi = document.querySelector('li:first-child')
+    // firstLi.outerHTML = "<li>TypeScript</li>"
+
+</script>
+
+</html>

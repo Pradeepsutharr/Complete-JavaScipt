@@ -31,22 +31,22 @@
 
 // //calculate cart total
 
-// //reduce()
+//reduce()
 
-// const itemsInCart = [
-//   { itemName: "pen", itemPrice: "10" },
-//   { itemName: "book", itemPrice: "50" },
-//   { itemName: "earbuds", itemPrice: "100" },
-//   { itemName: "charger", itemPrice: "80" },
-// ];
+const itemsInCartOne = [
+  { itemName: "pen", itemPrice: "10" },
+  { itemName: "book", itemPrice: "50" },
+  { itemName: "earbuds", itemPrice: "100" },
+  { itemName: "charger", itemPrice: "80" },
+];
 
-// const cartTotal = itemsInCart.reduce(
-//   (acc, item) => acc + Number(item.itemPrice),
-//   0
-// );
-// //Number(item.itemPrice) = converting price from string to number
-// // item = each Object in the array
-// console.log(cartTotal); //output=> 240
+const cartOneTotal = itemsInCartOne.reduce(
+  (acc, item) => acc + Number(item.itemPrice),
+  0
+);
+//Number(item.itemPrice) = converting price from string to number
+// item = each Object in the array
+console.log(cartOneTotal); //output=> 240
 
 //
 //
@@ -54,26 +54,26 @@
 //
 //
 
-// // Reduce Right method
-// const itemsInCart = [
-//   { itemName: "pen", itemPrice: "10" },
-//   { itemName: "book", itemPrice: "50" },
-//   { itemName: "earbuds", itemPrice: "100" },
-//   { itemName: "charger", itemPrice: "80" },
-// ];
+// Reduce Right method
+const itemsInCartTwo = [
+  { itemName: "pen", itemPrice: "10" },
+  { itemName: "book", itemPrice: "50" },
+  { itemName: "earbuds", itemPrice: "100" },
+  { itemName: "charger", itemPrice: "80" },
+];
 
-// const cartTotal = itemsInCart.reduceRight(function (acc, item) {
-//   console.log(
-//     `acc: ${acc}, crval: ${item.itemPrice} = ${acc + Number(item.itemPrice)}`
-//   );
+const cartTwoTotal = itemsInCartTwo.reduceRight(function (acc, item) {
+  console.log(
+    `acc: ${acc}, crval: ${item.itemPrice} = ${acc + Number(item.itemPrice)}`
+  );
 
-//   return acc + Number(item.itemPrice);
-// }, 0);
+  return acc + Number(item.itemPrice);
+}, 0);
 
-// //Number(item.itemPrice) = converting price from string to number
-// // item = each Object from the array
+//Number(item.itemPrice) = converting price from string to number
+// item = each Object from the array
 
-// console.log(cartTotal); //output=> 240
+console.log(cartTwoTotal); //output=> 240
 
 //
 //
@@ -106,21 +106,19 @@
 //
 //
 
-//REDUCE RIGHT ()
+// //REDUCE RIGHT ()
 
-const newNums = [2, 4, 6, 8, 10].reduceRight(function (
-  accumulator,
-  currentValue,
-  index
-) {
-  // console.log(index, accumulator, currentValue);
-  console.log(
-    `${index}: acc:${accumulator} crval:${currentValue} = ${
-      accumulator + currentValue
-    }`
-  );
-  return accumulator + currentValue;
-},
-0);
-
-console.log(newNums); //output=> 30
+// const newNums = [2, 4, 6, 8, 10].reduceRight(function (
+//   accumulator,
+//   currentValue,
+//   index
+// ) {
+//   console.log(
+//     `${index}: acc:${accumulator} crval:${currentValue} = ${
+//       accumulator + currentValue
+//     }`
+//   );
+//   return accumulator + currentValue;
+// },
+// 0);
+// console.log(newNums); //output=> 30
