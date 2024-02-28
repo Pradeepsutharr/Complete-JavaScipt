@@ -1,7 +1,7 @@
-const arr = [1, 2, 3, 4, 5, 6];
-for (const num of arr) {
-  console.log(num);
-}
+// const arr = [1, 2, 3, 4, 5, 6];
+// for (const val of arr) {
+//   console.log(val);
+// }
 
 /*
 |
@@ -13,8 +13,8 @@ for (const num of arr) {
 */
 
 // const message = "good morning";
-// for (const msg of message) {
-//   console.log(`each char is ${msg}`);
+// for (const char of message) {
+//   console.log(`each char is ${char}`);
 // }
 
 /*
@@ -37,10 +37,10 @@ for (const num of arr) {
 // for (const key of map) {
 //   console.log(key);
 // }
-// /*output=>
-// [ 'name', 'pradeep' ]
-// [ 'id', '777' ]
-// [ 'age', '22' ]*/
+/*output=>
+[ 'name', 'pradeep' ]
+[ 'id', '777' ]
+[ 'age', '22' ]*/
 
 /*
 |

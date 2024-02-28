@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <button id="StopBtn">Stop</button>
+  </body>
+
+  <script>
+    const text = document.querySelector("h1");
+    const btn = document.getElementById("StopBtn");
+
+    //  setTimeout() => this function will execute only once after given time
+
+    console.log(text);
+    // setTimeout(function () {
+    //   text.innerHTML = "Bye!";
+    //   console.log("text changed to Bye");
+    // }, 2000);
+
+    const changeText = setTimeout(function () {
+      text.innerHTML = "Bye!";
+      console.log("text changed to Bye");
+    }, 2000);
+
+    btn.addEventListener("click", () => {
+      clearInterval(changeText);
+      console.log("Stopped before 2 sec."); // text wont be changed if button clicked before 2 seconds
+    });
+  </script>
+</html>

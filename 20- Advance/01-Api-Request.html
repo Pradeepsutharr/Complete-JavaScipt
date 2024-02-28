@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .ApiData {
+        /* background-color: rgb(157, 157, 157); */
+        border: 2px solid black;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img id="image" src="" alt="" />
+    </div>
+  </body>
+
+  <script>
+    const image = document.getElementById("image");
+    // const requestUrl = "https://api.github.com/users/Pradeepsutharr";
+
+    // const xhr = new XMLHttpRequest();
+    // xhr.open("GET", requestUrl);
+    // xhr.onreadystatechange = function () {
+    //   console.log(xhr.readyState);
+
+    //   if (xhr.readyState === 4) {
+    //     // console.log(this.responseText);
+    //     const data = JSON.parse(this.responseText);
+    //     // image.setAttribute("src", data.avatar_url);      // // printing image from API
+    //     // image.src = data.avatar_url;                    // // printing image from API
+    //     // console.log(data.avatar_url); // getting Profile Image From Api
+    //     // console.log(data.repos_url);
+    //     // console.log(data.public_repos);
+    //   }
+    // };
+    // xhr.send();
+
+    //
+    //
+    //
+    //
+
+    const requestUrl = "https://fakestoreapi.com/products/14";
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+
+      if (xhr.readyState === 4) {
+        console.log(this.responseText);
+        const data = JSON.parse(this.responseText);
+
+        const apiDataDiv = document.createElement("div");
+        apiDataDiv.classList.add("ApiData");
+        apiDataDiv.style.width = "30%";
+
+        const imgDiv = document.createElement("div");
+        imgDiv.classList.add("img");
+
+        const imgTag = document.createElement("img");
+        imgTag.setAttribute("src", data.image);
+        imgTag.style.width = "100%";
+        imgDiv.appendChild(imgTag);
+        apiDataDiv.appendChild(imgDiv);
+        console.log(`Product Image: ${data.image}`);
+
+        const titleHeading = document.createElement("h2");
+        titleHeading.classList.add("title");
+        titleHeading.textContent = data.title;
+        apiDataDiv.appendChild(titleHeading);
+        console.log(`Product Title:${data.title}`);
+
+        const detailsPara = document.createElement("p");
+        detailsPara.classList.add("details");
+        detailsPara.textContent = data.description;
+        apiDataDiv.appendChild(detailsPara);
+        console.log(`Product Details: ${data.description}`);
+
+        const priceRatingDiv = document.createElement("div");
+        priceRatingDiv.classList.add("d-flex");
+        priceRatingDiv.style.display = "flex";
+        priceRatingDiv.style.justifyContent = "space-between";
+
+        const priceHeading = document.createElement("h2");
+        priceHeading.classList.add("price");
+        priceHeading.textContent = `Price: $${data.price}`;
+        priceRatingDiv.appendChild(priceHeading);
+        console.log(`Price: ${data.price}`);
+
+        const ratingHeading = document.createElement("h3");
+        ratingHeading.classList.add("rating");
+        ratingHeading.textContent = `Rating: ${data.rating.rate}`;
+        priceRatingDiv.appendChild(ratingHeading);
+        console.log(`Rating: ${data.rating.rate}`);
+
+        apiDataDiv.appendChild(priceRatingDiv);
+
+        document.body.appendChild(apiDataDiv);
+      }
+    };
+    xhr.send();
+  </script>
+</html>

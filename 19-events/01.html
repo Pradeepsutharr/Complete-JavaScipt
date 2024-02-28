@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="wrapper" id="wrapper">
+      <button id="btn1">Button-1</button>
+      <button id="btn2">Button-2</button>
+      <button id="btn3">Button-3</button>
+      <a id="link" href="http://www.google.com">Google</a>
+    </div>
+
+    <ul class="images">
+      <li><img src=https://picsum.photos/id/237/300/200 alt=""></li>
+      <li><img src="https://picsum.photos/seed/picsum/300/200" alt="" /></li>
+      <li><img src="https://picsum.photos/300/200?grayscale" alt="" /></li>
+      <li><img src="https://picsum.photos/300/200/?blur" alt="" /></li>
+    </ul>
+  </body>
+
+  <script>
+    //type,timestamp,defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    // clientX/ clientY, screenX, screenY
+    //altkey, ctrlkey, shiftkey, keycode
+
+    // document.getElementById("btn").addEventListener("click", function (e) {
+    //   alert("button clicked");
+    //   console.log(e);
+    // });
+
+    //
+    //
+    //
+    //
+
+    //if third parameter is false execusion will run from top to bottom
+    document.getElementById("wrapper").addEventListener(
+      "click",
+      function (e) {
+        console.log("clicked inside wrapper");
+      },
+      false
+    );
+    //output=> clicked inside wrapper
+
+    document.getElementById("btn2").addEventListener(
+      "click",
+      function (e) {
+        console.log("clicked on btn-2");
+      },
+      false
+    );
+    //output=> clicked on btn2,clicked inside wrapper
+
+    //
+    //
+    //
+    //
+
+    // //if third parameter is true execusion will run from bottom to top
+    // document.getElementById("wrapper").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("clicked inside wrapper");
+    //   },
+    //   true
+    // );
+    // //output=> clicked inside wrapper
+
+    // document.getElementById("btn2").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("clicked on btn-2");
+    //   },
+    //   true
+    // );
+    // //output=> clicked inside wrapper, clicked on btn-2
+
+    //
+    //
+    //
+    //
+    //
+
+    // document.getElementById("link").addEventListener("click", (e) => {
+    //   e.preventDefault();
+    //   e.stopPropagation();
+    //   console.log("link clicked"); //link wont redirect to another page
+    // });
+
+    //
+    //
+    //
+    //
+    //
+
+    // //removing clicked image
+    // document.querySelector(".images").addEventListener("click", function (e) {
+    //   //   console.log(e.target); // // getting image tag
+    //   console.log(e.target.parentNode); // getting li parent of image
+
+    //   let removeIt = e.target.parentNode;
+    //   //   removeIt.remove();                        // // first method
+    //   removeIt.parentNode.removeChild(removeIt); // // second method
+    // });
+
+    //
+    //
+    //
+    //
+
+    //removing clicked image
+    document.querySelector(".images").addEventListener("click", function (e) {
+      //   console.log(e.target); // // getting image tag
+      //   console.log(e.target.parentNode); // getting li parent of image
+
+      if (e.target.tagName === "IMG") {
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+        console.log(e.target.tagName);
+      }
+
+      //   removeIt.parentNode.removeChild(removeIt); // // second method
+    });
+  </script>
+</html>

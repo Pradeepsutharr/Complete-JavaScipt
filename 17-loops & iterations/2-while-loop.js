@@ -5,13 +5,13 @@
 // //number+2
 // }
 
-// let myArray = ["pradeep", "aksh", "harsh"];
-// let arr = 0;
+let myArray = ["pradeep", "aksh", "harsh"];
+let i = 0;
 
-// while (arr < myArray.length) {
-//   console.log(`value is ${myArray[arr]}`);
-//   arr = arr + 1; //do not use arr++ it will make the loop infinite(here we are increaseing value with 1)
-// }
+while (i < myArray.length) {
+  console.log(`value is ${myArray[i]}`);
+  i = i + 1; //do not use i++ it will make the loop infinite(here we are increaseing value with 1)
+}
 
 /*
 |

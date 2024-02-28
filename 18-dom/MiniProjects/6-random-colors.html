@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100%;
+        display: grid;
+        place-content: center;
+      }
+
+      .btns {
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+      }
+
+      .colorCode {
+        height: 200px;
+        width: 300px;
+        border: 1px solid black;
+        transition: all 0.5s ease-out;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btns">
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+    <div class="colorCode"></div>
+  </body>
+
+  <script>
+    const Start = document.getElementById("start");
+    const Stop = document.getElementById("stop");
+    const body = document.querySelector("body");
+    const ColorCode = document.querySelector(".colorCode");
+
+    //Generating Random Color Code
+    const RandomColor = function () {
+      let Hex = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += Hex[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    };
+    // console.log(RandomColor());
+
+    let IntervalId;
+
+    Start.addEventListener("click", StartChangingColor);
+
+    Stop.addEventListener("click", StopChangingColor);
+
+    // function StartChangingColor() {
+    //   IntervalId = setInterval(() => {
+    //     ColorCode.style.backgroundColor = `${RandomColor()}`;
+    //     console.log(RandomColor());
+    //   }, 1000);
+    // }
+
+    // function StopChangingColor() {
+    //   clearInterval(IntervalId);
+    //   IntervalId = null;
+    // }
+
+    function StartChangingColor() {
+      if (IntervalId == null) {
+        IntervalId = setInterval(() => {
+          ColorCode.style.backgroundColor = `${RandomColor()}`;
+          console.log(RandomColor());
+          // const Code = document.createElement("h5");
+          // let TextNode = document.createTextNode(`${RandomColor()}`);
+          // Code.appendChild(TextNode);
+          // body.appendChild(Code);
+        }, 1000);
+      }
+    }
+
+    function StopChangingColor() {
+      clearInterval(IntervalId);
+      IntervalId = null;
+    }
+
+    //
+    //
+    //
+    //
+    //
+    //
+
+    // //second way
+    // Start.addEventListener("click", () => {
+    //   ColorCode.innerHTML += "<h3>Random Bg Started";
+    //   IntervalId = setInterval(() => {
+    //     ColorCode.style.backgroundColor = `${RandomColor()}`;
+    //     // ColorCode.innerHTML += `${RandomColor()}`;
+    //   }, 1000);
+    // });
+
+    // Stop.addEventListener("click", () => {
+    //   clearInterval(IntervalId);
+    //   ColorCode.innerHTML += "<h3>Random Bg Stopped";
+    // });
+  </script>
+</html>

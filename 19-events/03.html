@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100vw;
+        display: grid;
+        place-content: center;
+      }
+
+      h3 {
+        display: inline-block;
+      }
+
+      .btns {
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btns">
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+    <div class="result"></div>
+  </body>
+
+  <script>
+    const start = document.getElementById("start");
+    const stop = document.getElementById("stop");
+    let result = document.querySelector(".result");
+
+    Number = 0;
+    let StartPrint;
+    start.addEventListener("click", () => {
+      //   console.log("Counting Started");
+      result.innerHTML += "<h4>Counting Started</h4>";
+      StartPrint = setInterval(() => {
+        if (Number < 10) {
+          Number++;
+          console.log(`${Number}`);
+          result.innerHTML += `<h3>${Number}</h3>,  `;
+        } else {
+          clearInterval(StartPrint);
+          //   console.log("finished");
+          result.innerHTML += "<h4>Counting Complete</h4>";
+        }
+      }, 1000);
+    });
+
+    stop.addEventListener("click", () => {
+      clearInterval(StartPrint);
+      console.log("Counting Stopped");
+      result.innerHTML += "<h4>Counting Stopped</h4>";
+    });
+  </script>
+</html>

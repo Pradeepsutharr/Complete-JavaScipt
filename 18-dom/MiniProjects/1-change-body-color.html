@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Body Color</title>
+
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #grey {
+            background-color: grey;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        .btn {
+            width: 100px;
+            height: 100px;
+        }
+
+        .wrap {
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        .container {
+            display: grid;
+            place-items: center;
+        }
+
+        .resetBtn {
+            height: 30px;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="wrap">
+            <button id="red" class="btn"></button>
+            <button id="blue" class="btn"></button>
+            <button id="grey" class="btn"></button>
+            <button id="yellow" class="btn"></button>
+        </div>
+        <button id="reset" class="resetBtn btn">Reset Color</button>
+    </div>
+
+</body>
+
+<script>
+
+    let btns = document.querySelectorAll('.btn')
+    const body = document.querySelector('body')
+
+
+    //using switch case 
+
+    // btns.forEach((btn) => {
+    //     // console.log(btn);
+    //     btn.addEventListener('click', function (e) {
+    //         switch (e.target.id) {
+    //             case 'red':
+    //                 body.style.backgroundColor = 'red'
+    //                 break;
+
+    //             case 'blue':
+    //                 body.style.backgroundColor = 'blue'
+    //                 break;
+
+    //             case 'grey':
+    //                 body.style.backgroundColor = 'grey'
+    //                 break;
+
+    //             case 'yellow':
+    //                 body.style.backgroundColor = 'yellow'
+    //                 break;
+
+    //             default:
+    //                 body.style.removeProperty('background-color')
+    //         }
+    //     })
+    // })
+
+
+
+    // using if else
+
+    btns.forEach((btn) => {
+        btn.addEventListener('click', (btn) => {
+            if (btn.target.id === 'red') {
+                body.style.backgroundColor = 'red'
+            } else if (btn.target.id === 'blue') {
+                body.style.backgroundColor = 'blue'
+            } else if (btn.target.id === 'grey') {
+                body.style.backgroundColor = 'grey'
+            } else if (btn.target.id === 'yellow') {
+                body.style.backgroundColor = 'yellow'
+            }
+            else {
+                body.style.removeProperty('background-color')
+            }
+        })
+    })
+
+
+
+    //using ternary operator instead of if else for shorter and cleaner code
+    btns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            const clr = e.target.id === 'red' ? 'red' : e.target.id === 'blue' ? 'blue' : e.target.id === 'grey' ? 'grey' : e.target.id === 'yellow' ? 'yellow' : 'default';
+            body.style.backgroundColor = clr === 'default' ? '' : clr;
+        });
+    });
+
+
+</script>
+
+
+</html>
