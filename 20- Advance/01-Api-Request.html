@@ -45,6 +45,23 @@
     //
     //
 
+    /*
+      onReadyStateChange	It is called whenever readystate attribute changes. It must not be used with synchronous requests.
+
+
+       readyState	represents the state of the request. It ranges from 0 to 4.
+       
+       0 UNOPENED open() is not called.
+       
+       1 OPENED open is called but send() is not called.
+       
+       2 HEADERS_RECEIVED send() is called, and headers and status are available.
+       
+       3 LOADING Downloading data; responseText holds the data.
+       
+       4 DONE The operation is completed fully.
+*/
+
     const requestUrl = "https://fakestoreapi.com/products/14";
 
     const xhr = new XMLHttpRequest();
@@ -54,7 +71,7 @@
 
       if (xhr.readyState === 4) {
         console.log(this.responseText);
-        const data = JSON.parse(this.responseText);
+        const data = JSON.parse(this.responseText); // converting from string to json and storing into variable
 
         const apiDataDiv = document.createElement("div");
         apiDataDiv.classList.add("ApiData");
