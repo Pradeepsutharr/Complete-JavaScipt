@@ -31,7 +31,7 @@ const gameName = "pubg";
 // console.log(gameName.charAt(0)); //output=> p
 
 // length property will give us length of string index vise
-//length will count empty space too
+// length will count empty space too
 
 let name2 = "himanshu";
 // console.log(name2.length); //output=> 8

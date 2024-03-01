@@ -1,4 +1,4 @@
-///////////////--coversion---///////////////
+// /////////////--coversion---///////////////
 
 // let score = 33;
 // // let score = "33abc";
@@ -6,9 +6,9 @@
 
 // console.log(typeof score); //number
 
-// const valueInNumber = Number(score);
+// const valueInNumber = Number(score); // this method will convert string into number
 // console.log(valueInNumber); //33
-// console.log(typeof valueInNumber);
+// console.log(typeof valueInNumber); // Number
 
 // --------------------------------------
 
@@ -19,7 +19,7 @@
 // console.log(typeof valueToNumber); //number
 // console.log(valueToNumber); //NaN
 
-//----------------------
+// ----------------------
 
 // let score = null;
 // // console.log(score); //null
@@ -29,7 +29,7 @@
 // console.log(valueInNumber); //0
 // console.log(typeof valueInNumber); //number
 
-//---------------------------
+// ---------------------------
 
 // let score = undefined;
 // console.log(score); //undefined
@@ -44,7 +44,7 @@
 // console.log(val2); //output empty
 // console.log(typeof val2); //string
 
-//---------------------------------------
+// ---------------------------------------
 
 // let val1 = "pradeep";
 // let val1 = "";   //false
@@ -54,7 +54,7 @@
 // let val1 = "null"; //true
 // console.log(Boolean(val1));
 
-//---------------------
+// ---------------------
 
 // let someNumber = 77;
 
@@ -68,7 +68,7 @@
 // console.log(x);
 // console.log(y);
 
-//---------operations---------
+// ---------operations---------
 // let value = 7;
 // let negValue = -value;
 // console.log(negValue); //output => -7

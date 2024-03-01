@@ -60,8 +60,8 @@
 const min = 10;
 const max = 20;
 
-// console.log(Math.random() * (max - min + 1));
-// // gives a number betweeen min and max
+console.log(Math.random() * (max - min + 1));
+// // gives a number betweeen 0 to 10
 
 // console.log(Math.random() * (max - min + 1) + min);
 // gives a number between min and max including both ends (higher than min and lower than max)
