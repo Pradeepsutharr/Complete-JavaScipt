@@ -56,10 +56,10 @@
 
     <div class="container">
         <div class="wrap">
-            <button id="red" class="btn"></button>
-            <button id="blue" class="btn"></button>
-            <button id="grey" class="btn"></button>
-            <button id="yellow" class="btn"></button>
+            <button id="red" class="btn">Red</button>
+            <button id="blue" class="btn">Blue</button>
+            <button id="grey" class="btn">Grey</button>
+            <button id="yellow" class="btn">Yellow</button>
         </div>
         <button id="reset" class="resetBtn btn">Reset Color</button>
     </div>
@@ -70,9 +70,6 @@
 
     let btns = document.querySelectorAll('.btn')
     const body = document.querySelector('body')
-
-
-    //using switch case 
 
     // btns.forEach((btn) => {
     //     // console.log(btn);
@@ -120,17 +117,6 @@
             }
         })
     })
-
-
-
-    //using ternary operator instead of if else for shorter and cleaner code
-    btns.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-            const clr = e.target.id === 'red' ? 'red' : e.target.id === 'blue' ? 'blue' : e.target.id === 'grey' ? 'grey' : e.target.id === 'yellow' ? 'yellow' : 'default';
-            body.style.backgroundColor = clr === 'default' ? '' : clr;
-        });
-    });
-
 
 </script>
 

@@ -80,7 +80,7 @@
 // // marvel.push(dc);
 // // console.log(marvel);
 // //output=> [ 'thor','ironman','captain marvel',[ 'superman', 'flash', 'batman' ]]
-// //this method is adding DC as a single element in Marvel which not the right way
+// //this method is adding DC as a single element in Marvel which is not the right way
 
 // const all_heroes = marvel.concat(dc);
 // console.log(all_heroes);
@@ -116,18 +116,18 @@
 //
 //
 //
-
-// converting from others to Array
+// checking Array
 let str = "Pradeep";
 console.log(Array.isArray(str));
 //output=> false coz str is a string not array
 
+// converting from others to Array
 let convert_into_arr = Array.from(str);
 console.log(convert_into_arr);
 //output=> ['P', 'r', 'a','d', 'e', 'e','p' ]
 
 console.log(Array.from({ name: "Pradeep" }));
-//output=> []  empty array  coz we have not  provided any iterable object like key pair
+//output=> []  empty array coz we have not provided any iterable object like key pair
 
 //
 //
@@ -149,3 +149,4 @@ console.log(merge_variables_into_arr);
 
 const random = ["tree", 795, [0, 1, 2]];
 console.log(random[2][2]);
+// output => 2;

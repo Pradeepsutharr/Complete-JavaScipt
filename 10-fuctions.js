@@ -64,8 +64,8 @@
 //     return "plz enter username";
 //   }
 // }
-// console.log(logginMsg()); //output=> undefined just logged in
-// // console.log(logginMsg("Pradeep")); //output=> Pradeep just logged in
+// console.log(logginMsg()); //output=> plz enter username
+// console.log(logginMsg("'Pradeep'")); //output=> Pradeep just logged in
 // // console.log(logginMsg("pradeep"));
 
 /*
@@ -110,8 +110,9 @@
 //     id: 111
 // }
 
-// function objectHandle(anyObject) {    //here we are passing object word so we can handle any object through function we can use any words instead of object
-//     console.log(`username is ${anyObject.username} and id is ${anyObject.id}`)
+// function objectHandle(anyObject) {
+//   //here we are passing object word so we can handle any object through function we can use any words instead of object
+//   console.log(`username is ${anyObject.username} and id is ${anyObject.id}`);
 // }
 // objectHandle(person)
 // objectHandle(user)
@@ -128,9 +129,9 @@
 //we can also pass a object directly in argument
 
 // objectHandle({
-//     username: "Kinjal",
-//     id: 123
-// })
+//   username: "Kinjal",
+//   id: 123,
+// });
 
 /*
 |

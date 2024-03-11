@@ -36,67 +36,56 @@
   </body>
 
   <script>
-    const form = document.querySelector("form");
-    form.addEventListener("submit", function Validate(e) {
-      e.preventDefault();
+    // const form = document.querySelector("form");
+    // form.addEventListener("submit", function Validate(e) {
+    //   e.preventDefault();
 
-      const reqField = document.querySelectorAll(".req");
-      emptyFields = 0;
-      reqField.forEach((field) => {
-        const error = field.parentNode.querySelector(".error");
-        const id = field.parentNode.querySelector("label").innerHTML;
-        console.log(id);
-        if (field.value === "") {
-          if (!error) {
-            span = document.createElement("span");
-            span.classList.add("error");
-            span.textContent = `${id} is required`;
-            field.parentNode.appendChild(span);
-          }
-          emptyFields++;
-          console.log(emptyFields);
-        } else {
-          const removeSpan = field.parentNode.querySelector(".error");
-          if (removeSpan) {
-            removeSpan.parentNode.removeChild(removeSpan);
-          }
-        }
-      });
-      if (emptyFields === 0) {
-        // All fields are filled, so remove preventDefault()
-        form.removeEventListener("submit", Validate);
-        // form.submit();
-        console.log(emptyFields);
-      }
-    });
-
-    // const ReqField = document.querySelectorAll(".req");
-
-    // ReqField.forEach((field) => {
-    //   field.addEventListener("blur", () => {
-    //     let error = field.parentNode.querySelector(".error");
+    //   const reqField = document.querySelectorAll(".req");
+    //   emptyFields = 0;
+    //   reqField.forEach((field) => {
+    //     const error = field.parentNode.querySelector(".error");
+    //     const id = field.parentNode.querySelector("label").innerHTML;
+    //     console.log(id);
     //     if (field.value === "") {
     //       if (!error) {
-    //         errSpan = document.createElement("span");
-    //         errSpan.classList.add("error");
-    //         errSpan.textContent = "this is required";
-    //         field.parentNode.appendChild(errSpan);
+    //         span = document.createElement("span");
+    //         span.classList.add("error");
+    //         span.textContent = `${id} is required`;
+    //         field.parentNode.appendChild(span);
     //       }
+    //       emptyFields++;
+    //       console.log(emptyFields);
     //     } else {
-    //       field.parentNode.removeChild(field.nextSibling);
+    //       const removeSpan = field.parentNode.querySelector(".error");
+    //       if (removeSpan) {
+    //         removeSpan.parentNode.removeChild(removeSpan);
+    //       }
     //     }
     //   });
+    //   if (emptyFields === 0) {
+    //     // All fields are filled, so remove preventDefault()
+    //     form.removeEventListener("submit", Validate);
+    //     // form.submit();
+    //     console.log(emptyFields);
+    //   }
     // });
+
+    const ReqField = document.querySelectorAll(".req");
+
+    ReqField.forEach((field) => {
+      field.addEventListener("blur", () => {
+        let error = field.parentNode.querySelector(".error");
+        if (field.value === "") {
+          if (!error) {
+            errSpan = document.createElement("span");
+            errSpan.classList.add("error");
+            errSpan.textContent = "this is required";
+            field.parentNode.appendChild(errSpan);
+          }
+        } else {
+          field.parentNode.removeChild(field.nextSibling);
+        }
+      });
+    });
   </script>
 </html>
-<!-- const form = document.querySelector("form"); form.addEventListener("submit", (e)
-=> { e.preventDefault(); const reqFields = document.querySelectorAll(".req");
-let emptyFields = 0; reqFields.forEach((field) => { const error =
-field.parentNode.querySelector(".error"); if (field.value === "") { if (!error)
-{ const span = document.createElement("span"); span.classList.add("error");
-span.textContent = "This field is required"; field.parentNode.appendChild(span);
-} emptyFields++; } else { const errorToRemove =
-field.parentNode.querySelector(".error"); if (errorToRemove) {
-errorToRemove.parentNode.removeChild(errorToRemove); } } }); if (emptyFields ===
-0) { // All fields are filled, so remove preventDefault()
-form.removeEventListener("submit", handleFormSubmit); form.submit(); } }); -->

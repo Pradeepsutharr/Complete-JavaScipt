@@ -162,8 +162,8 @@ const course = {
   courseInstructor: "Pradeep",
 };
 
-const { courseName } = course; // we add one or more keys  from the object into variables
-// console.log(courseName); //output=> JavaScript
+const { courseName } = course; // we can add one or more keys  from the object into variables
+console.log(courseName, coursePrice); //output=> JavaScript
 
 const { courseInstructor: instructor } = course; //we can change the name (key) in this way
 // console.log(instructor); //output=> Pradeep

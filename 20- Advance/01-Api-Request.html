@@ -95,19 +95,19 @@
         imgTag.style.width = "100%";
         imgDiv.appendChild(imgTag);
         apiDataDiv.appendChild(imgDiv);
-        console.log(`Product Image: ${data.image}`);
+        // console.log(`Product Image: ${data.image}`);
 
         const titleHeading = document.createElement("h2");
         titleHeading.classList.add("title");
         titleHeading.textContent = data.title;
         apiDataDiv.appendChild(titleHeading);
-        console.log(`Product Title:${data.title}`);
+        // console.log(`Product Title:${data.title}`);
 
         const detailsPara = document.createElement("p");
         detailsPara.classList.add("details");
         detailsPara.textContent = data.description;
         apiDataDiv.appendChild(detailsPara);
-        console.log(`Product Details: ${data.description}`);
+        // console.log(`Product Details: ${data.description}`);
 
         const priceRatingDiv = document.createElement("div");
         priceRatingDiv.classList.add("d-flex");
@@ -118,13 +118,13 @@
         priceHeading.classList.add("price");
         priceHeading.textContent = `Price: $${data.price}`;
         priceRatingDiv.appendChild(priceHeading);
-        console.log(`Price: ${data.price}`);
+        // console.log(`Price: ${data.price}`);
 
         const ratingHeading = document.createElement("h3");
         ratingHeading.classList.add("rating");
         ratingHeading.textContent = `Rating: ${data.rating.rate}`;
         priceRatingDiv.appendChild(ratingHeading);
-        console.log(`Rating: ${data.rating.rate}`);
+        // console.log(`Rating: ${data.rating.rate}`);
 
         apiDataDiv.appendChild(priceRatingDiv);
 
