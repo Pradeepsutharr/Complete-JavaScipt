@@ -6,131 +6,91 @@
     <title>Document</title>
 
     <style>
-      .ApiData {
-        /* background-color: rgb(157, 157, 157); */
+      * {
+        margin: 0;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+
+      .card {
         border: 2px solid black;
-        padding: 20px;
       }
     </style>
   </head>
+
   <body>
     <p>
       An object of XMLHttpRequest is used for asynchronous communication between
-      client and server. It performs following operations: 
-      <ol>
-        <li>Sends data from the client in the background</li>
-        <li>Receives the data from the server</li>
-        <li>Updates the webpage without reloading it.</li>
-      </ol>
+      client and server. It performs following operations:
     </p>
+    <ol>
+      <li>Sends data from the client in the background</li>
+      <li>Receives the data from the server</li>
+      <li>Updates the webpage without reloading it.</li>
+    </ol>
 
-    <div>
-      <img id="image" src="" alt="" />
-    </div>
+    <button id="btn">Print Data</button>
   </body>
 
   <script>
-    const image = document.getElementById("image");
-    // const requestUrl = "https://api.github.com/users/Pradeepsutharr";
-
-    // const xhr = new XMLHttpRequest();
-    // xhr.open("GET", requestUrl);
-    // xhr.onreadystatechange = function () {
-    //   console.log(xhr.readyState);
-
-    //   if (xhr.readyState === 4) {
-    //     // console.log(this.responseText);
-    //     const data = JSON.parse(this.responseText);
-    //     // image.setAttribute("src", data.avatar_url);      // // printing image from API
-    //     // image.src = data.avatar_url;                    // // printing image from API
-    //     // console.log(data.avatar_url); // getting Profile Image From Api
-    //     // console.log(data.repos_url);
-    //     // console.log(data.public_repos);
-    //   }
-    // };
-    // xhr.send();
-
-    //
-    //
-    //
-    //
-
-    /*
-      onReadyStateChange	It is called whenever readystate attribute changes. It must not be used with synchronous requests.
-
-
-       readyState	represents the state of the request. It ranges from 0 to 4.
-       
-       0 UNOPENED open() is not called.
-       
-       1 OPENED open is called but send() is not called.
-       
-       2 HEADERS_RECEIVED send() is called, and headers and status are available.
-       
-       3 LOADING Downloading data; responseText holds the data.
-       
-       4 DONE The operation is completed fully.
-*/
-
-    const requestUrl = "https://fakestoreapi.com/products/14";
+    const api = "https://fakestoreapi.com/products/14";
+    const btn = document.getElementById("btn");
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.style.width = "40%";
 
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", requestUrl);
+    xhr.open("Get", api);
+    // console.log(xhr.readyState);
+
+    let DataPrint = false;
+
     xhr.onreadystatechange = function () {
-      console.log(xhr.readyState);
+      if (xhr.readyState === 4 && !DataPrint) {
+        const Data = JSON.parse(this.responseText);
+        // console.log(Data);
+        const image = document.createElement("img");
+        image.classList.add("product-image");
+        image.style.width = "100%";
+        image.setAttribute("src", Data.image);
+        card.appendChild(image);
 
-      if (xhr.readyState === 4) {
-        console.log(this.responseText);
-        const data = JSON.parse(this.responseText); // converting from string to json and storing into variable
+        const title = document.createElement("h4");
+        title.textContent += Data.title;
+        card.appendChild(title);
 
-        const apiDataDiv = document.createElement("div");
-        apiDataDiv.classList.add("ApiData");
-        apiDataDiv.style.width = "80%";
+        const description = document.createElement("p");
+        description.style.fontSize = "14px";
+        description.textContent += Data.description;
+        card.appendChild(description);
 
-        const imgDiv = document.createElement("div");
-        imgDiv.classList.add("img");
+        const flexDiv = document.createElement("div");
+        flexDiv.style.display = "flex";
+        flexDiv.style.justifyContent = "space-between";
+        flexDiv.style.alignItems = "center";
+        card.appendChild(flexDiv);
 
-        const imgTag = document.createElement("img");
-        imgTag.setAttribute("src", data.image);
-        imgTag.style.width = "100%";
-        imgDiv.appendChild(imgTag);
-        apiDataDiv.appendChild(imgDiv);
-        // console.log(`Product Image: ${data.image}`);
+        const price = document.createElement("h3");
+        price.textContent += `MRP:${Data.price}`;
+        flexDiv.appendChild(price);
 
-        const titleHeading = document.createElement("h2");
-        titleHeading.classList.add("title");
-        titleHeading.textContent = data.title;
-        apiDataDiv.appendChild(titleHeading);
-        // console.log(`Product Title:${data.title}`);
-
-        const detailsPara = document.createElement("p");
-        detailsPara.classList.add("details");
-        detailsPara.textContent = data.description;
-        apiDataDiv.appendChild(detailsPara);
-        // console.log(`Product Details: ${data.description}`);
-
-        const priceRatingDiv = document.createElement("div");
-        priceRatingDiv.classList.add("d-flex");
-        priceRatingDiv.style.display = "flex";
-        priceRatingDiv.style.justifyContent = "space-between";
-
-        const priceHeading = document.createElement("h2");
-        priceHeading.classList.add("price");
-        priceHeading.textContent = `Price: $${data.price}`;
-        priceRatingDiv.appendChild(priceHeading);
-        // console.log(`Price: ${data.price}`);
-
-        const ratingHeading = document.createElement("h3");
-        ratingHeading.classList.add("rating");
-        ratingHeading.textContent = `Rating: ${data.rating.rate}`;
-        priceRatingDiv.appendChild(ratingHeading);
-        // console.log(`Rating: ${data.rating.rate}`);
-
-        apiDataDiv.appendChild(priceRatingDiv);
-
-        document.body.appendChild(apiDataDiv);
+        const rating = document.createElement("span");
+        rating.textContent += `Rating: ${Data.rating.rate}`;
+        flexDiv.appendChild(rating);
       }
     };
     xhr.send();
+
+    btn.addEventListener("click", function () {
+      if (!DataPrint) {
+        document.body.appendChild(card);
+        btn.innerText = "Remove Data";
+        DataPrint = true;
+      } else {
+        document.body.removeChild(card);
+        btn.innerText = "Print Data";
+        DataPrint = false;
+      }
+    });
   </script>
 </html>

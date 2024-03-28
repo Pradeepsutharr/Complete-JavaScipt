@@ -59,10 +59,10 @@
       }, 1000);
     });
 
-    stop.addEventListener("click", () => {
+    stop.addEventListener("click", (() => {
       clearInterval(StartPrint);
       console.log("Counting Stopped");
       result.innerHTML += "<h4>Counting Stopped</h4>";
-    });
+    }));
   </script>
 </html>
