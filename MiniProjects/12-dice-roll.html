@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-top: 2rem;
+      }
+
+      .dice {
+        font-size: 7rem;
+        margin: 5px;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+
+      .roll-animation {
+        animation-name: roll;
+      }
+
+      @keyframes roll {
+        0% {
+          transform: rotateY(0deg) rotateX(0deg) rotate(0deg);
+        }
+
+        100% {
+          transform: rotateY(720deg) rotateX(720deg) rotateZ(720deg);
+        }
+      }
+
+      /* button {
+        background-color: #47a5c4;
+        color: white;
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      } */
+
+      /* button:hover {
+        background-color: #2e8baf;
+      } */
+
+      ul {
+        list-style: none;
+        padding: 0;
+        max-width: 600px;
+        margin: 2rem auto;
+      }
+
+      li {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        margin: 0.5rem;
+        background-color: #f2f2f2;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      li span {
+        font-size: 3rem;
+        margin-right: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <h1>Dice Roll Simulator</h1> -->
+
+    <div class="dice" id="dice">&#9860;</div>
+    <button id="button">Roll Dice</button>
+    <ul id="history">
+      <!-- <li>Roll 1: <span>&#9856;</span></li>
+      <li>Roll 2: <span>&#9860;</span></li> -->
+    </ul>
+  </body>
+
+  <script>
+    // const dice = document.querySelector("#dice");
+    // const btn = document.querySelector("#button");
+    // const ul = document.querySelector("#history");
+
+    // let historyList = [];
+    // btn.addEventListener("click", () => {
+    //   const result = Math.floor(Math.random() * 6) + 1;
+    //   //   console.log(result);
+    //   historyList.push(result);
+    //   //   console.log(historyList);
+    //   dice.innerHTML = updateDice(result);
+
+    //   dice.classList.add("roll-animation");
+    //   setTimeout(() => {
+    //     dice.classList.remove("roll-animation");
+    //   }, 1000);
+
+    //   function updateHistory() {
+    //     ul.innerHTML = "";
+    //     for (let i = 0; i < historyList.length; i++) {
+    //       const li = document.createElement("li");
+    //       li.innerHTML = `Roll ${i + 1}: <span>${updateDice(
+    //         historyList[i]
+    //       )}</span>`;
+    //       ul.appendChild(li);
+    //     }
+    //   }
+
+    //   function updateDice(result) {
+    //     switch (result) {
+    //       case 1:
+    //         return "&#9856;";
+    //       case 2:
+    //         return "&#9857;";
+    //       case 3:
+    //         return "&#9858;";
+    //       case 4:
+    //         return "&#9859;";
+    //       case 5:
+    //         return "&#9860;";
+    //       case 6:
+    //         return "&#9861;";
+    //       default:
+    //         return "";
+    //     }
+    //   }
+    //   updateHistory();
+    // });
+
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+
+    // const dice = document.querySelector('#dice')
+    // const btn = document.querySelector('#button')
+    // const history = document.querySelector('#history')
+
+    // let historyList = []
+
+    // btn.addEventListener("click", () => {
+    //     const result = Math.floor(Math.random() * 6) + 1;
+    //     const diceFace = updateDice(result)
+    //     dice.innerHTML = diceFace
+    //     historyList.push(result)
+    //     // console.log(historyList);
+
+    //     dice.classList.add("roll-animation")
+    //     setTimeout(() => {
+    //         dice.classList.remove("roll-animation")
+    //     }, 1000)
+
+    //     function updateHistory() {
+    //         history.innerHTML = "";
+    //         for (let i = 0; i < historyList.length; i++) {
+    //             const li = document.createElement('li')
+    //             li.innerHTML = `Roll${i + 1}:<span>${updateDice(historyList[i])}</span>`
+    //             history.appendChild(li)
+    //             console.log();
+    //         }
+
+    //     }
+
+    //     function updateDice(result) {
+    //         switch (result) {
+    //             case 1:
+    //                 return "&#9856;";
+    //             case 2:
+    //                 return "&#9857;";
+    //             case 3:
+    //                 return "&#9858;";
+    //             case 4:
+    //                 return "&#9859;";
+    //             case 5:
+    //                 return "&#9860;";
+    //             case 6:
+    //                 return "&#9861;";
+    //             default:
+    //                 return "";
+    //         }
+    //     }
+
+    //     updateHistory()
+
+    // })
+
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+
+    const dice = document.querySelector("#dice");
+    const btn = document.querySelector("#button");
+    const ul = document.querySelector("#history");
+
+    btn.addEventListener("click", () => {
+      dice.classList.add("roll-animation");
+      rollDice();
+      setTimeout(() => {
+        dice.classList.remove("roll-animation");
+      }, 1000);
+    });
+
+    let history = [];
+
+    function rollDice() {
+      const result = Math.floor(Math.random() * 6) + 1;
+      console.log(result);
+      dice.innerHTML = diceFace(result);
+      history.push(result);
+      console.log(history);
+      updateHistory();
+    }
+
+    function updateHistory() {
+      ul.innerHTML = "";
+      for (let i = 0; i < history.length; i++) {
+        const li = document.createElement("li");
+        li.innerHTML = `Roll${i + 1}<span>${diceFace(history[i])}`;
+        ul.appendChild(li);
+      }
+    }
+
+    function diceFace(result) {
+      switch (result) {
+        case 1:
+          return "&#9856;";
+        case 2:
+          return "&#9857;";
+        case 3:
+          return "&#9858;";
+        case 4:
+          return "&#9859";
+        case 5:
+          return "&#9860";
+        case 6:
+          return "&#9861";
+        default:
+          return "";
+      }
+    }
+  </script>
+</html>

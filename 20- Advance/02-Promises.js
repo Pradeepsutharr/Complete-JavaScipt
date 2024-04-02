@@ -240,4 +240,7 @@ fetch("https://fakestoreapi.com/products/14")
   })
   .catch((error) => {
     console.log(error);
+  })
+  .finally(() => {
+    console.log("Opearation Completed");
   });
