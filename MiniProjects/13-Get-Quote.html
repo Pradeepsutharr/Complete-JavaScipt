@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Quote Generator</title>
+
+    <style>
+      body {
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Get A Random Quote</div>
+
+      <h2 class="quote">
+        <i class="fa-solid fa-quote-left"></i>
+        <span id="quote-field"></span>
+        <i class="fa-solid fa-quote-right"></i>
+      </h2>
+      <p id="author"></p>
+
+      <button id="btn">Get A Quote</button>
+    </div>
+    <script>
+      const Btn = document.querySelector("#btn");
+      const QuoteField = document.querySelector("#quote-field");
+      const Author = document.querySelector("#author");
+
+      btn.addEventListener("click", () => {
+        async function getQuote() {
+          try {
+            Btn.innerText = "Loading...";
+            Btn.disabled = true;
+            QuoteField.innerText = "Updating...";
+            Author.innerText = "Updating...";
+            const response = await fetch("https://api.quotable.io/random");
+            const data = await response.json();
+            const quoteContent = data.content;
+            const quoteAuthor = data.author;
+            QuoteField.innerText = quoteContent;
+            Author.innerText = "~ " + quoteAuthor;
+            Btn.innerText = "Get A Quote";
+            Btn.disabled = false;
+            console.log(data);
+          } catch (error) {
+            console.log(error);
+            QuoteField.innerText = "An error happened, try again later";
+            Author.innerText = "An error happened";
+            Btn.innerText = "Get a quote";
+            Btn.disabled = false;
+          }
+        }
+        getQuote();
+      });
+    </script>
+  </body>
+</html>
